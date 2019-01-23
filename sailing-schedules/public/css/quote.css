@@ -1,0 +1,64 @@
+.portcss {
+  font-size: 14px;
+  color: #55597f;
+  width: auto;
+  font-weight: bold;
+}
+.portalphacode {
+  font-size: 12px;
+  color: #7a73ad;
+  width: auto;
+  font-weight: bold;
+}
+
+.workblue {
+
+  font-size: 14px;
+  color: #4316fd;
+  width: auto;
+  font-weight: bold;
+
+}
+.blue{
+  color: #4316fd;
+}
+.gray{
+  color: #55597f;
+}
+
+.darkblue{
+  color: #2e0084;
+  width: auto;
+  font-weight: bold;
+}
+
+.validate {
+  font-size: 15px;
+}
+.px12 {
+  font-size: 13px;
+}
+
+.totalq {
+  font-size: 28px;
+}
+.cabezeras {
+  font-size: 16px;
+  width: auto;
+  font-weight: bold;
+}
+
+.boton{
+  background-color: #4316fd;
+  border-color: #4316fd;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+
+  vertical-align: text-top;
+
+}
+
+
+
+

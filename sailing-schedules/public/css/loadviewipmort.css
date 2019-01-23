@@ -1,0 +1,7 @@
+#load{
+    border: 15px solid #ccc;
+    border-top-color: blueviolet;
+    border-top-style:  groove;
+    height: 100px;
+    width: 100px;
+}

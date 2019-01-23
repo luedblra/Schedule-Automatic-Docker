@@ -1,0 +1,47 @@
+.m-brand__logo img {
+    height: 40px;
+    width: auto;
+}
+
+#m_header_nav {
+    background-color:#061D2C;
+}
+
+#m_header_nav span {
+    color:#fff;
+    font-size: 11px;
+}
+.btn{
+    border-radius: 0px !important;
+}
+.btn-primary{
+    background-color: #FF5F48 !important;
+    border: 1px solid #FF5F48 !important;
+}
+.btn-success{
+    background-color: #061D2C !important;
+    border: 1px solid #061D2C !important;
+}
+.m-menu__hor-arrow {
+    color: #fff !important;
+}
+
+.m-brand {
+    background-color:#061D2C !important;
+}
+
+.m-menu__subnav {
+    background-color:#061D2C !important;
+}
+
+h3.m-subheader__title{
+    color:#FF5F47 !important;
+}
+
+.m-dropdown__body span {
+    color: #222 !important;
+}
+
+.m-menu__arrow--adjust {
+    color:#061D2C !important;
+}
