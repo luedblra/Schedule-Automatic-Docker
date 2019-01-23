@@ -22,7 +22,7 @@
                     <a href="{{route('Routes.Exist.Chunk')}}" class="btn btn-danger">Actualizar Rutas</a>
                     <a href="{{route('list.cities.maersk')}}" class="btn btn-info">Actualizar Cities</a>
                     <a href="{{route('force.Api.Notification.maersk')}}" class="btn btn-danger">Forzar Notificacion</a>
-                    <a href="{{route('test')}}" class="btn btn-danger">Test</a>
+                    <!--<a href="{{route('test')}}" class="btn btn-danger">Test</a>-->
                 </div>
             </div>
             <br><br>
