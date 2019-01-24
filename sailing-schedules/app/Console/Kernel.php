@@ -27,6 +27,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+       $schedule->exec('php /var/www/html/artisan queue:work --timeout=3500 --tries=2 &')->withoutOverlapping();
         $schedule->command('UpdateRouteMaersk:command')
             ->saturdays();
         
