@@ -46,7 +46,6 @@ return array(
     'Lcobucci\\JWT\\' => array($vendorDir . '/lcobucci/jwt/src'),
     'Laravel\\Tinker\\' => array($vendorDir . '/laravel/tinker/src'),
     'Laravel\\Passport\\' => array($vendorDir . '/laravel/passport/src'),
-    'Laravel\\Horizon\\' => array($vendorDir . '/laravel/horizon/src'),
     'JakubOnderka\\PhpConsoleHighlighter\\' => array($vendorDir . '/jakub-onderka/php-console-highlighter/src'),
     'JakubOnderka\\PhpConsoleColor\\' => array($vendorDir . '/jakub-onderka/php-console-color/src'),
     'Illuminate\\' => array($vendorDir . '/laravel/framework/src/Illuminate'),
@@ -65,6 +64,5 @@ return array(
     'Cron\\' => array($vendorDir . '/dragonmantank/cron-expression/src/Cron'),
     'Collective\\Html\\' => array($vendorDir . '/laravelcollective/html/src'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
-    'Cake\\Chronos\\' => array($vendorDir . '/cakephp/chronos/src'),
     'App\\' => array($baseDir . '/app'),
 );

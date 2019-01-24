@@ -3,7 +3,7 @@
 namespace App\Providers;
 use Illuminate\Support\Facades\Schema;
 
-use Laravel\Horizon\Horizon;
+
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,12 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        Horizon::auth(function ($request) {
-            // Always show admin if local development
-            if (env('APP_ENV') == 'local') {
-                return true;
-            }
-        });
+
     }
 
     /**
