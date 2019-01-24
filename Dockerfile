@@ -120,16 +120,18 @@ RUN mkdir -p /var/www/html/storage/framework/sessions
 RUN mkdir -p /var/www/html/storage/framework/views
 RUN mkdir -p /var/www/html/storage/meta
 RUN mkdir -p /var/www/html/storage/cache
-#RUN mkdir -p /var/www/html/public/uploads
+
 
 # Change folder permission
 RUN chmod -R 0777 /var/www/html/storage/
-#RUN chmod -R 0777 /var/www/html/public/uploads
+RUN rm /var/www/html/public/storage
 
 # Custom ini file in php conf folder
 #COPY config/custom.ini /usr/local/etc/php/conf.d/
 
+
 # Running artisan commands
+RUN php artisan storage:link
 CMD php artisan config:cache
 CMD php artisan cache:clear
 
