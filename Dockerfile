@@ -132,6 +132,7 @@ RUN rm /var/www/html/public/storage
 
 # Running artisan commands
 RUN php artisan storage:link
+RUN php artisan schedule:run &
 CMD php artisan config:cache
 CMD php artisan cache:clear
 
