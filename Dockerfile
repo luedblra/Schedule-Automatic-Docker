@@ -151,4 +151,4 @@ CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 RUN (crontab -l ;echo "* * * * * root php /var/www/html/artisan" >> /var/log/cron.log") | crontab
 
 # Run the command on container startup
-CMD cron start && tail -f /var/log/cron.log
+CMD ["cron", "-f"]
