@@ -136,4 +136,27 @@ CMD php artisan cache:clear
 #RUN php /var/www/html/artisan cache:clear
 #RUN php /var/www/html/artisan config:cache
 
+
+
+
+# Create the log file to be able to run tail
+RUN touch /var/log/cron.log
+
+#Install Cron
+RUN apt-get update
+RUN apt-get -y install cron
+
+# Add crontab file in the cron directory
+ADD crontab /etc/cron.d/hello-cron
+
+# Give execution rights on the cron job
+RUN chmod 0644 /etc/cron.d/hello-cron
+
+# Run the command on container startup
+CMD cron && tail -f /var/log/cron.log
+
+
+
+
+
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
