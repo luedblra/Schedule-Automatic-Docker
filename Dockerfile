@@ -148,7 +148,7 @@ CMD php artisan cache:clear
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
 # Setup cron job
-RUN (crontab -l ;echo "* * * * * root php /var/www/html/artisan" >> /var/log/cron.log") | crontab
+RUN (crontab -l ;echo "* * * * * php /var/www/html/artisan" >> /var/log/cron.log") | crontab
 
 # Run the command on container startup
 CMD ["cron", "-f"]
