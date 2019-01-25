@@ -151,4 +151,4 @@ CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 RUN (crontab -l ; echo "* * * * * echo hola mundo" >> /var/log/cron.log") | crontab
 
 # Run the command on container startup
-CMD ["cron", "-f"]
+CMD cron && tail -f /var/log/cron.log
