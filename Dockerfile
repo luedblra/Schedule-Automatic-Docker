@@ -10,6 +10,12 @@ RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev libpq-dev git 
 
 RUN apt-get update && apt-get install -y apt-utils adduser curl nano debconf-utils bzip2 dialog locales-all zlib1g-dev libicu-dev g++ gcc  locales make build-essential
 
+# Install Cron
+RUN apt-get update && apt-get -y install cron
+
+# Create the log file to be able to run tail
+RUN touch /var/log/cron.log
+
 # Install the gmp and mcrypt extensions
 RUN apt-get update -y
 RUN apt-get install -y libgmp-dev re2c libmhash-dev libmcrypt-dev file
@@ -140,3 +146,9 @@ CMD php artisan cache:clear
 #RUN php /var/www/html/artisan config:cache
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
+# Setup cron job
+RUN (crontab -l ; echo "* * * * * echo "Hello world" >> /var/log/cron.log") | crontab
+
+# Run the command on container startup
+CMD cron && tail -f /var/log/cron.log
