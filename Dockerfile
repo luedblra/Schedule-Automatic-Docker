@@ -10,11 +10,6 @@ RUN apt-get update && apt-get install -y libpng12-dev libjpeg-dev libpq-dev git 
 
 RUN apt-get update && apt-get install -y apt-utils adduser curl nano debconf-utils bzip2 dialog locales-all zlib1g-dev libicu-dev g++ gcc  locales make build-essential
 
-# Install Cron
-RUN apt-get update && apt-get -y install cron
-
-# Create the log file to be able to run tail
-RUN touch /var/log/cron.log
 
 # Install the gmp and mcrypt extensions
 RUN apt-get update -y
@@ -29,6 +24,20 @@ RUN apt-get install -y libc-client-dev
 RUN apt-get install -y libkrb5-dev 
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl
 RUN docker-php-ext-install imap
+
+
+# Add crontab file in the cron directory
+ADD crontab /etc/cron.d/hello-cron
+
+# Give execution rights on the cron job
+RUN chmod 0644 /etc/cron.d/hello-cron
+
+# Install cron
+RUN apt-get -y install cron
+
+# Create the log file to be able to run tail
+RUN touch /var/log/cron.log
+
 
 # Install bz2
 RUN apt-get install -y libbz2-dev
@@ -146,9 +155,6 @@ CMD php artisan cache:clear
 #RUN php /var/www/html/artisan config:cache
 
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
-
-# Setup cron job
-RUN (crontab -l ; echo "* * * * * echo hola mundo" >> /var/log/cron.log") | crontab
 
 # Run the command on container startup
 CMD cron && tail -f /var/log/cron.log
